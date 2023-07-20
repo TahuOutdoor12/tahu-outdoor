@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -38,8 +38,7 @@
                         <tr>
                             <th>No.</th>
                             <th>Gambar</th>
-                            <th>Merk Mobil</th>
-                            <th>No Plat</th>
+                            <th>Nama Barang</th>
                             <th>Harga</th>
                             <th>Status</th>
                             <th>Deskripsi</th>
@@ -48,7 +47,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT *FROM mobil ORDER BY id_mobil ASC";
+                            $sql = "SELECT *FROM barang ORDER BY id_barang ASC";
                             $row = $koneksi->prepare($sql);
                             $row->execute();
                             $hasil = $row->fetchAll();
@@ -61,13 +60,12 @@
                             <td><?php echo $no;?></td>
                             <td><img src="../../assets/image/<?php echo $isi['gambar'];?>" class="img-fluid" style="width:200px;"></td>
                             <td><?php echo $isi['merk'];?></td>
-                            <td><?php echo $isi['no_plat'];?></td>
                             <td><?php echo $isi['harga'];?></td>
                             <td><?php echo $isi['status'];?></td>
                             <td><?php echo $isi['deskripsi'];?></td>
-                            <td>
-                                <a class="btn btn-primary btn-sm" href="edit.php?id=<?php echo $isi['id_mobil'];?>" role="button">Edit</a>  
-                                <a class="btn btn-danger  btn-sm" href="proses.php?aksi=hapus&id=<?= $isi['id_mobil'];?>&gambar=<?= $isi['gambar'];?>" role="button">Hapus</a>  
+                            <td style="display: flex; gap:4px;">
+                                <a class="btn btn-primary btn-sm" href="edit.php?id=<?php echo $isi['id_barang'];?>" role="button">Edit</a>  
+                                <a class="btn btn-danger  btn-sm" href="proses.php?aksi=hapus&id=<?= $isi['id_barang'];?>&gambar=<?= $isi['gambar'];?>" role="button">Hapus</a>  
                             </td>
                         </tr>
                         <?php $no++; }?>

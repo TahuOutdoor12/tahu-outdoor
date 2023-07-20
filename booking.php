@@ -1,14 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	     : booking.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
-  | 
+  | @package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
  */
@@ -20,7 +16,7 @@
         echo '<script>alert("Harap login !");window.location="index.php"</script>';
     }
     $id = $_GET['id'];
-    $isi = $koneksi->query("SELECT * FROM mobil WHERE id_mobil = '$id'")->fetch();
+    $isi = $koneksi->query("SELECT * FROM barang WHERE id_barang = '$id'")->fetch();
 ?>
 <br>
 <br>
@@ -43,7 +39,7 @@
                     <i class="fa fa-close"></i> Not Available
                 </li>
             <?php }?>
-            <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Free E-toll 50k</li>
+           
             <li class="list-group-item bg-dark text-white">
                 <i class="fa fa-money"></i> Rp. <?php echo number_format($isi['harga']);?>/ day
             </li>
@@ -79,7 +75,7 @@
                       <input type="number" name="lama_sewa" id="" required class="form-control" placeholder="Lama Sewa">
                     </div> 
                     <input type="hidden" value="<?php echo $_SESSION['USER']['id_login'];?>" name="id_login">
-                    <input type="hidden" value="<?php echo $isi['id_mobil'];?>" name="id_mobil">
+                    <input type="hidden" value="<?php echo $isi['id_barang'];?>" name="id_barang">
                     <input type="hidden" value="<?php echo $isi['harga'];?>" name="total_harga">
                     <hr/>
                     <?php if($isi['status'] == 'Tersedia'){?>

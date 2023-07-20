@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -9,7 +9,7 @@
   | 
  */
     require '../../koneksi/koneksi.php';
-    $title_web = 'Edit Mobil';
+    $title_web = 'Edit Barang';
     include '../header.php';
     if(empty($_SESSION['USER']))
     {
@@ -17,7 +17,7 @@
     }
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM mobil WHERE id_mobil =  ?";
+    $sql = "SELECT * FROM barang WHERE id_barang =  ?";
     $row = $koneksi->prepare($sql);
     $row->execute(array($id));
 
@@ -30,9 +30,9 @@
     <div class="card">
         <div class="card-header text-white bg-primary">
             <h4 class="card-title">
-                Edit Mobil - <?= $hasil['merk'];?>
+                Edit Barang - <?= $hasil['merk'];?>
                 <div class="float-right">
-                    <a class="btn btn-warning" href="mobil.php" role="button">Kembali</a>
+                    <a class="btn btn-warning" href="barang.php" role="button">Kembali</a>
                 </div>
             </h4>
         </div>
@@ -44,12 +44,7 @@
                         <div class="col-sm-6">
 
                             <div class="form-group row">
-                                <label class="col-sm-3">No Plat</label>
-                                <input type="text" class="form-control col-sm-9" value="<?= $hasil['no_plat'];?>" name="no_plat" placeholder="Isi No Plat">
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-3">Merk Mobil</label>
+                                <label class="col-sm-3">Nama Barang</label>
                                 <input type="text" class="form-control col-sm-9"  value="<?= $hasil['merk'];?>" name="merk" placeholder="Isi Merk">
                             </div>
 

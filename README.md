@@ -1,15 +1,13 @@
-Source Code Aplikasi Rental Mobil PHP & MySQL, tambah data, update / edit data, dan hapus data. User interface menggunakan Template Bootstrap.  Aplikasi kali ini cocok untuk yang sedang belajar PHP & MySQL dasar, karena pada aplikasi ini anda dapat belajar tentang cara membuat login, kemudian membuat menu-menu yang terdapat pada bagian halaman admin seputar aplikasi, membuat CRUD data mobil, data transaksi booking dan lain nya.
+Source Code Aplikasi Rental Tahu OutdoorPHP & MySQL, tambah data, update / edit data, dan hapus data. User interface menggunakan Template Bootstrap.  Aplikasi kali ini cocok untuk yang sedang belajar PHP & MySQL dasar, karena pada aplikasi ini anda dapat belajar tentang cara membuat login, kemudian membuat menu-menu yang terdapat pada bagian halaman admin seputar aplikasi, membuat CRUD data barang, data transaksi booking dan lain nya.
 
-## DONASI : <a href="https://saweria.co/fauzan1892">https://saweria.co/fauzan1892</a>
 
-### Link Blog : <a href="https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html">https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html</a>
 
-### * Untuk Reuploader Source Code tolong cantumin sumber juga ya, terima kasih :)
+
 
 ## Fitur-fitur pada Aplikasi pada kali ini :
 
 Login & Daftar Akun
-- Modul Mobil
+- Modul barang
 - Modul Booking
 - Modul Peminjaman dan Pengembalian 
 - Informasi Website dan Aplikasi

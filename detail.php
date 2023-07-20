@@ -1,13 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	   : detail.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
+  | @@package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
   | 
@@ -16,7 +13,7 @@
     require 'koneksi/koneksi.php';
     include 'header.php';
     $id = strip_tags($_GET['id']);
-    $hasil = $koneksi->query("SELECT * FROM mobil WHERE id_mobil = '$id'")->fetch();
+    $hasil = $koneksi->query("SELECT * FROM barang WHERE id_barang = '$id'")->fetch();
 ?>
 <div class="container mt-5">
 <div class="row">
@@ -43,14 +40,14 @@
                         <i class="fa fa-close"></i> Not Available
                     </li>
                     <?php }?>
-                    <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Free E-toll 50k</li>
+                   
                     <li class="list-group-item bg-dark text-white">
                         <i class="fa fa-money"></i> Rp. <?php echo number_format($hasil['harga']);?>/ day
                     </li>
                 </ul>
                 <hr/>
                 <center>
-                    <a href="booking.php?id=<?php echo $hasil['id_mobil'];?>" class="btn btn-success">Booking now!</a>
+                    <a href="booking.php?id=<?php echo $hasil['id_barang'];?>" class="btn btn-success">Booking now!</a>
                     <a href="index.php" class="btn btn-info">Back</a>
                 </center>
             </div>

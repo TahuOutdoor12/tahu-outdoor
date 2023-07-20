@@ -1,13 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	   : proses.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
+  | @package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
   | 
@@ -31,7 +28,7 @@ if($_GET['id'] == 'login'){
         
         $_SESSION['USER'] = $hasil;
 
-        if($_SESSION['USER']['level'] == 'admin')
+        if($_SESSION['USER']['level'] === 'admin')
         {
             echo '<script>alert("Login Sukses");window.location="../admin/index.php";</script>';    
         }
@@ -86,7 +83,7 @@ if($_GET['id'] == 'booking')
 
     $data[] = time();
     $data[] = $_POST['id_login'];
-    $data[] = $_POST['id_mobil'];
+    $data[] = $_POST['id_barang'];
     $data[] = $_POST['ktp'];
     $data[] = $_POST['nama'];
     $data[] = $_POST['alamat'];
@@ -99,7 +96,7 @@ if($_GET['id'] == 'booking')
 
     $sql = "INSERT INTO booking (kode_booking, 
     id_login, 
-    id_mobil, 
+    id_barang, 
     ktp, 
     nama, 
     alamat, 

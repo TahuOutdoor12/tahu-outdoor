@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -10,7 +10,7 @@
   | 
  */
     require '../../koneksi/koneksi.php';
-    $title_web = 'Tambah Mobil';
+    $title_web = 'Tambah Barang';
     include '../header.php';
     if(empty($_SESSION['USER']))
     {
@@ -26,7 +26,7 @@
             <h4 class="card-title">
                 Tambah Barang
                 <div class="float-right">
-                    <a class="btn btn-warning" href="mobil.php" role="button">Kembali</a>
+                    <a class="btn btn-warning" href="barang.php" role="button">Kembali</a>
                 </div>
             </h4>
         </div>
@@ -38,13 +38,8 @@
                         <div class="col-sm-6">
 
                             <div class="form-group row">
-                                <label class="col-sm-3">No Plat</label>
-                                <input type="text" class="form-control col-sm-9" name="no_plat" placeholder="Isi No Plat">
-                            </div>
-
-                            <div class="form-group row">
                                 <label class="col-sm-3">Nama barang</label>
-                                <input type="text" class="form-control col-sm-9" name="Barang" placeholder="Isi Barang">
+                                <input type="text" class="form-control col-sm-9" name="nama_barang" placeholder="Isi Barang">
                             </div>
 
                             <div class="form-group row">

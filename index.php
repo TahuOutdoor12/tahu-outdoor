@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -19,9 +19,9 @@ include 'header.php';
 <div id="carouselId" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <?php 
-            $querymobil =  $koneksi -> query('SELECT * FROM mobil ORDER BY id_mobil DESC')->fetchAll();
+            $querybarang =  $koneksi -> query('SELECT * FROM barang ORDER BY id_barang DESC')->fetchAll();
             $no =1;
-            foreach($querymobil as $isi)
+            foreach($querybarang as $isi)
             {
         ?>
         <li data-target="#carouselId" data-slide-to="<?= $no;?>" class="<?php if($no == '1'){ echo 'active';}?>"></li>
@@ -30,7 +30,7 @@ include 'header.php';
     <div class="carousel-inner" role="listbox">
         <?php 
             $no =1;
-            foreach($querymobil as $isi)
+            foreach($querybarang as $isi)
             {
         ?>
         <div class="carousel-item <?php if($no == '1'){ echo 'active';}?>">
@@ -58,7 +58,7 @@ include 'header.php';
                         <br/>
                         <br/>
                         <center>
-                            <?php if($_SESSION['USER']['level'] == 'admin'){?>
+                            <?php if($_SESSION['USER']['level'] = 'admin'){?>
                                 <a href="admin/index.php" class="btn btn-primary mb-2 btn-block">Dashboard</a>
                             <?php }else{?>
                                 <a href="blog.php" class="btn btn-primary mb-2 btn-block">Booking Sekarang !</a>
@@ -94,7 +94,7 @@ include 'header.php';
         <div class="col-sm-9">
             <div class="row">
                 <?php 
-                    $query =  $koneksi -> query('SELECT * FROM mobil ORDER BY id_mobil DESC')->fetchAll();
+                    $query =  $koneksi -> query('SELECT * FROM barang ORDER BY id_barang DESC')->fetchAll();
                     $no =1;
                     foreach($query as $isi)
                     {
@@ -124,14 +124,14 @@ include 'header.php';
                         <?php }?>
                     
                     
-                        <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Free E-toll 50k</li>
+                        
                         <li class="list-group-item bg-dark text-white">
                             <i class="fa fa-money"></i> Rp. <?php echo number_format($isi['harga']);?>/ day
                         </li>
                         </ul>
                         <div class="card-body">
-                        <center><a href="booking.php?id=<?php echo $isi['id_mobil'];?>" class="btn btn-success">Booking now!</a>
-                        <a href="detail.php?id=<?php echo $isi['id_mobil'];?>" class="btn btn-info">Detail</a></center>
+                        <center><a href="booking.php?id=<?php echo $isi['id_barang'];?>" class="btn btn-success">Booking now!</a>
+                        <a href="detail.php?id=<?php echo $isi['id_barang'];?>" class="btn btn-info">Detail</a></center>
                         </div>
                     </div>
                 </div>

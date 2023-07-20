@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -28,8 +28,8 @@
         $hsl = $koneksi->query("SELECT * FROM pembayaran WHERE id_booking = '$id_booking'")->fetch();
 
 
-        $id = $hasil['id_mobil'];
-        $isi = $koneksi->query("SELECT * FROM mobil WHERE id_mobil = '$id'")->fetch();
+        $id = $hasil['id_barang'];
+        $isi = $koneksi->query("SELECT * FROM barang WHERE id_barang = '$id'")->fetch();
     }
     
 ?>
@@ -97,7 +97,7 @@
                         <i class="fa fa-close"></i> Not Available
                     </li>
                 <?php }?>
-                <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Free E-toll 50k</li>
+                
                 <li class="list-group-item bg-dark text-white">
                     <i class="fa fa-money"></i> Rp. <?php echo number_format($isi['harga']);?>/ day
                 </li>
@@ -107,7 +107,7 @@
     <div class="col-sm-8">
          <div class="card">
             <div class="card-header">
-                <h5 class="card-title">Detail Booking & Status Mobil</h5>
+                <h5 class="card-title">Detail Booking & Status Barang</h5>
             </div>
            <div class="card-body">
                <form method="post" action="proses.php?id=konfirmasi">
@@ -148,7 +148,7 @@
                             <td>Rp. <?php echo number_format($hasil['total_harga']);?></td>
                         </tr>
                         <tr>
-                            <td>Status Mobil</td>
+                            <td>Status Barang</td>
                             <td> :</td>
                             <td>
                                 <select class="form-control" name="status">
@@ -162,7 +162,7 @@
                             </td>
                         </tr>
                     </table>
-                    <input type="hidden" name="id_mobil" value="<?php echo $isi['id_mobil'];?>">
+                    <input type="hidden" name="id_barang" value="<?php echo $isi['id_barang'];?>">
                     <button type="submit" class="btn btn-primary float-right">
                         Ubah Status
                     </button>

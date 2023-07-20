@@ -1,14 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	   : bookinh.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
-  | 
+  | @package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
  */
@@ -21,11 +17,11 @@
     }
     if(!empty($_GET['id'])){
         $id = strip_tags($_GET['id']);
-        $sql = "SELECT mobil.merk, booking.* FROM booking JOIN mobil ON 
-                booking.id_mobil=mobil.id_mobil WHERE id_login = '$id' ORDER BY id_booking DESC";
+        $sql = "SELECT barang.merk, booking.* FROM booking JOIN barang ON 
+                booking.id_barang=barang.id_barang WHERE id_login = '$id' ORDER BY id_booking DESC";
     }else{
-        $sql = "SELECT mobil.merk, booking.* FROM booking JOIN mobil ON 
-                booking.id_mobil=mobil.id_mobil ORDER BY id_booking DESC";
+        $sql = "SELECT barang.merk, booking.* FROM booking JOIN barang ON 
+                booking.id_barang=barang.id_barang ORDER BY id_booking DESC";
     }
     $hasil = $koneksi->query($sql)->fetchAll();
 ?>
@@ -42,30 +38,36 @@
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm">
                     <thead>
+            
                         <tr>
+
                             <th>No. </th>
                             <th>Kode Booking</th>
-                            <th>Merk Mobil</th>
+                            <th>Nama Barang</th>
                             <th>Nama </th>
                             <th>Tanggal Sewa </th>
                             <th>Lama Sewa </th>
                             <th>Total Harga</th>
                             <th>Konfirmasi</th>
                             <th>Aksi</th>
+
                         </tr>
+
                     </thead>
                     <tbody>
                         <?php  $no=1; foreach($hasil as $isi){?>
                         <tr>
+                            
                             <td><?php echo $no;?></td>
                             <td><?= $isi['kode_booking'];?></td>
                             <td><?= $isi['merk'];?></td>
-                            <td><?= $isi['nama barang'];?></td>
+                            <td><?= $isi['nama'];?></td>
                             <td><?= $isi['tanggal'];?></td>
                             <td><?= $isi['lama_sewa'];?> hari</td>
                             <td>Rp. <?= number_format($isi['total_harga']);?></td>
                             <td><?= $isi['konfirmasi_pembayaran'];?></td>
                             <td>
+                        
                                 <a class="btn btn-primary" href="bayar.php?id=<?= $isi['kode_booking'];?>" 
                                 role="button">Detail</a>   
                             </td>

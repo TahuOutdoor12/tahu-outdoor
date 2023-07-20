@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -16,8 +16,8 @@
     {
         echo '<script>alert("Harap Login");window.location="index.php"</script>';
     }
-    $hasil = $koneksi->query("SELECT mobil.merk, booking.* FROM booking JOIN mobil ON 
-    booking.id_mobil=mobil.id_mobil ORDER BY id_booking DESC")->fetchAll();
+    $hasil = $koneksi->query("SELECT barang.merk, booking.* FROM booking JOIN barang ON 
+    booking.id_barang=barang.id_barang ORDER BY id_booking DESC")->fetchAll();
 ?>
 <br>
 <br>
@@ -34,7 +34,7 @@
                         <tr>
                             <th>No. </th>
                             <th>Kode Booking</th>
-                            <th>Merk Mobil</th>
+                            <th>Nama Barang</th>
                             <th>Nama </th>
                             <th>Tanggal Sewa </th>
                             <th>Lama Sewa </th>

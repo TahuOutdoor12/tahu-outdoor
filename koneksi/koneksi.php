@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -12,7 +12,7 @@
     $user = 'root';
     $pass = '';
 
-    $koneksi = new PDO("mysql:host=localhost;dbname=codekop_free_rental_mobil", $user, $pass);
+    $koneksi = new PDO("mysql:host=localhost;dbname=rental_tahu_outdooor", $user, $pass);
 
     global $url;
     $url = "http://localhost/aku/";

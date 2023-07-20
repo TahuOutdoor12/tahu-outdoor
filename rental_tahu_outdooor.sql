@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `codekop_free_rental_mobil`
+-- Database: `rental_tahu_outdooor`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,7 @@ CREATE TABLE `booking` (
   `id_booking` int(11) NOT NULL,
   `kode_booking` varchar(255) NOT NULL,
   `id_login` int(11) NOT NULL,
-  `id_mobil` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
   `ktp` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id_booking`, `kode_booking`, `id_login`, `id_mobil`, `ktp`, `nama`, `alamat`, `no_tlp`, `tanggal`, `lama_sewa`, `total_harga`, `konfirmasi_pembayaran`, `tgl_input`) VALUES
+INSERT INTO `booking` (`id_booking`, `kode_booking`, `id_login`, `id_barang`, `ktp`, `nama`, `alamat`, `no_tlp`, `tanggal`, `lama_sewa`, `total_harga`, `konfirmasi_pembayaran`, `tgl_input`) VALUES
 (1, '1576329294', 3, 5, '231423123', 'Krisna', 'Bekasi', '08132312321', '2019-12-28', 2, 400000, 'Pembayaran di terima', '2019-12-14'),
 (2, '1576671989', 3, 5, '231423', 'Krisna Waskita', 'Bekasi Ujung Harapan', '082391273127', '2019-12-20', 2, 400525, 'Pembayaran di terima', '2019-12-18'),
 (3, '1642998828', 3, 5, '1283821832813', 'Krisna', 'Bekasi', '089618173609', '2022-01-26', 4, 800743, 'Pembayaran di terima', '2022-01-24');
@@ -100,12 +100,12 @@ INSERT INTO `login` (`id_login`, `nama_pengguna`, `username`, `password`, `level
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mobil`
+-- Table structure for table `barang`
 --
 
-CREATE TABLE `mobil` (
-  `id_mobil` int(11) NOT NULL,
-  `no_plat` varchar(255) NOT NULL,
+CREATE TABLE `barang` (
+  `id_barang` int(11) NOT NULL,
+  
   `merk` varchar(255) NOT NULL,
   `harga` int(255) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
@@ -114,10 +114,10 @@ CREATE TABLE `mobil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mobil`
+-- Dumping data for table `barang`
 --
 
-INSERT INTO `mobil` (`id_mobil`, `no_plat`, `merk`, `harga`, `deskripsi`, `status`, `gambar`) VALUES
+INSERT INTO `barang` (`id_barang`, `merk`, `harga`, `deskripsi`, `status`, `gambar`) VALUES
 (5, 'N34234', 'Avanza', 200000, 'Apa aja', 'Tidak Tersedia', '1673593078toyota-all-new-avanza-2015-tangkapan-layar_169.jpeg'),
 (6, 'N 1232 BKT', 'New Xenia', 500000, 'Baru', 'Tersedia', 'all-new-xenia-exterior-tampak-perspektif-depan---varian-1.5r-ads.jpg');
 
@@ -175,10 +175,10 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id_login`);
 
 --
--- Indexes for table `mobil`
+-- Indexes for table `barang`
 --
-ALTER TABLE `mobil`
-  ADD PRIMARY KEY (`id_mobil`);
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id_barang`);
 
 --
 -- Indexes for table `pembayaran`
@@ -209,10 +209,10 @@ ALTER TABLE `login`
   MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `mobil`
+-- AUTO_INCREMENT for table `barang`
 --
-ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `barang`
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`

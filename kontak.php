@@ -1,13 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	   : kontak.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
+  |  @package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
   | 

@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   |  @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -20,8 +20,8 @@
     $kode_booking = $_GET['id'];
     $hasil = $koneksi->query("SELECT * FROM booking WHERE kode_booking = '$kode_booking'")->fetch();
 
-    $id = $hasil['id_mobil'];
-    $isi = $koneksi->query("SELECT * FROM mobil WHERE id_mobil = '$id'")->fetch();
+    $id = $hasil['id_barang'];
+    $isi = $koneksi->query("SELECT * FROM barang WHERE id_barang = '$id'")->fetch();
 ?>
 <br>
 <br>

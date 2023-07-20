@@ -1,14 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	   : bayar.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
-  | 
+  | @package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
  */
@@ -22,8 +18,8 @@
     $kode_booking = $_GET['id'];
     $hasil = $koneksi->query("SELECT * FROM booking WHERE kode_booking = '$kode_booking'")->fetch();
 
-    $id = $hasil['id_mobil'];
-    $isi = $koneksi->query("SELECT * FROM mobil WHERE id_mobil = '$id'")->fetch();
+    $id = $hasil['id_barang'];
+    $isi = $koneksi->query("SELECT * FROM barang WHERE id_barang = '$id'")->fetch();
 
     $unik  = random_int(100,999);
     
@@ -63,7 +59,7 @@
                 <?php }?>
             
             
-                <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Free E-toll 50k</li>
+                
                 <li class="list-group-item bg-dark text-white">
                     <i class="fa fa-money"></i> Rp. <?php echo number_format($isi['harga']);?>/ day
                 </li>
@@ -72,7 +68,7 @@
     </div>
     <div class="col-sm-8">
          <div class="card">
-           <div class="card-body">
+           <div class="card-body" id="for-print">
                     <table class="table">
                         <tr>
                             <td>Kode Booking  </td>
@@ -112,7 +108,7 @@
                         <tr>
                             <td>Status </td>
                             <td> :</td>
-                            <td><?php echo $hasil['konfirmasi_pembayaran'];?></td>
+                            <td data-status="<?php echo $hasil['konfirmasi_pembayaran'];?>"><?php echo $hasil['konfirmasi_pembayaran'];?></td>
                         </tr>
                     </table>
 
@@ -129,5 +125,15 @@
 <br>
 <br>
 <br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var element = document.getElementById('for-print');
+    const status = document.querySelector('[data-status]');
+    
+    if (status.textContent == 'Sedang di proses') {
+        html2pdf(element);
+    }
+</script>
 
 <?php include 'footer.php';?>

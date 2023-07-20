@@ -1,6 +1,6 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
   | @package   : Rental Perlengkapan Outdoor
   | @file	   : Tahu Outdoor.php 
@@ -26,8 +26,8 @@
     $c = $koneksi->query("SELECT * FROM pembayaran WHERE id_booking = '$id_booking'")->rowCount();
 
 
-    $id = $hasil['id_mobil'];
-    $isi = $koneksi->query("SELECT * FROM mobil WHERE id_mobil = '$id'")->fetch();
+    $id = $hasil['id_barang'];
+    $isi = $koneksi->query("SELECT * FROM barang WHERE id_barang = '$id'")->fetch();
     
 ?>
 <br>
@@ -90,7 +90,7 @@
                 <?php }?>
             
             
-                <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Tenda Borneo 4 : 50.000</li>
+                
                 <li class="list-group-item bg-dark text-white">
                     <i class="fa fa-money"></i> Rp. <?php echo number_format($isi['harga']);?>/ day
                 </li>

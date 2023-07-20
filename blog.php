@@ -1,13 +1,10 @@
 <?php
 /*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
+  | Source Code Aplikasi Rental Tahu Outdoor PHP & MySQL
   | 
-  | @package   : rental_mobil
-  | @file	   : blog.php 
-  | @author    : fauzan1892 / Fauzan Falah
-  | @copyright : Copyright (c) 2017-2021 Codekop.com (https://www.codekop.com)
-  | @blog      : https://www.codekop.com/products/source-code-aplikasi-rental-mobil-php-mysql-7.html 
-  | 
+  | @package   : Rental Perlengkapan Outdoor
+  | @file	   : Tahu Outdoor.php 
+  | @author    : M Rizki Saepul Rohman
   | 
   | 
   | 
@@ -18,9 +15,9 @@
     if($_GET['cari'])
     {
         $cari = strip_tags($_GET['cari']);
-        $query =  $koneksi -> query('SELECT * FROM mobil WHERE merk LIKE "%'.$cari.'%" ORDER BY id_mobil DESC')->fetchAll();
+        $query =  $koneksi -> query('SELECT * FROM barang WHERE merk LIKE "%'.$cari.'%" ORDER BY id_barang DESC')->fetchAll();
     }else{
-        $query =  $koneksi -> query('SELECT * FROM mobil ORDER BY id_mobil DESC')->fetchAll();
+        $query =  $koneksi -> query('SELECT * FROM barang ORDER BY id_barang DESC')->fetchAll();
     }
 ?>
 <br>
@@ -33,7 +30,7 @@
             {
                 echo '<h4> Keyword Pencarian : '.$cari.'</h4>';
             }else{
-                echo '<h4> Semua Mobil</h4>';
+                echo '<h4> Semua Barang</h4>';
             }
         ?>
         <div class="row mt-3">
@@ -58,15 +55,15 @@
                                 <i class="fa fa-close"></i> Not Available
                             </li>
                         <?php }?>
-                        <li class="list-group-item bg-info text-white"><i class="fa fa-check"></i> Free E-toll 50k</li>
+                        
                         <li class="list-group-item bg-dark text-white">
                             <i class="fa fa-money"></i> Rp. <?php echo number_format($isi['harga']);?>/ day
                         </li>
                     </ul>
                     <div class="card-body">
                         <center>
-                            <a href="booking.php?id=<?php echo $isi['id_mobil'];?>" class="btn btn-success">Booking now!</a>
-                            <a href="detail.php?id=<?php echo $isi['id_mobil'];?>" class="btn btn-info">Detail</a>
+                            <a href="booking.php?id=<?php echo $isi['id_barang'];?>" class="btn btn-success">Booking now!</a>
+                            <a href="detail.php?id=<?php echo $isi['id_barang'];?>" class="btn btn-info">Detail</a>
                         </center>
                     </div>
                 </div>
